@@ -1,6 +1,7 @@
 public class BetterArray{
     private int[] arr;
     private int size = 0;
+    //Main method will be deleeted for separate driver class
     public static void main(String[] args){
         BetterArray test = new BetterArray();
         test.add(1);
@@ -41,7 +42,7 @@ public class BetterArray{
         return 0;
     }
     public void set(int index, int num){
-    //set sepecific values whithn the array
+        //set sepecific values whithn the array
         if (index <= size && index >= 0){
             System.err.print("ERROR: Index invalid");
         }
@@ -52,13 +53,19 @@ public class BetterArray{
     //METHODS THAT ARE YET TO BE DONE
     /*
     public void remove(int index){
-    //removes a value AND shrink arry size aka NO INTERNAL BLANKS
+        //removes a value AND shrink arry size aka NO INTERNAL BLANKS
     }
     public Boolean contains(int num){
         //returns boolean of weher or not it is contained
     }
     //Xtra Methods?
-    public int avg(){
+    public int count(int num){
+        //returns the number of times a specified element occurs
+    }
+    public int indexOf(int num){
+        //returns index of first ccurency of this value
+    }
+    public int average(){
         //returns average
     }
     */
