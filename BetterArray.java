@@ -2,16 +2,19 @@ public class BetterArray{
     private int[] arr;
     private int size = 0;
     //Main method will be deleeted for separate driver class
-    public static void main(String[] args){
-        BetterArray test = new BetterArray();
-        test.add(1);
-        test.add(4);
-        test.add(9);
-        System.out.print(test);
-        System.out.println("Length: " + test.getSize());
-        System.out.println("Should be 9 "  + test.get(2));
-        test.clear();
-        System.out.println("Should be zero for fail... " + test.get(2));
+    public static void main(String[] args) {
+        BetterArray ba = new BetterArray();
+        System.out.println(ba); ba.add(7);
+        System.out.println(ba.getSize());
+        System.out.println(ba);
+        // Add 0-9 to ba, should resize to 20
+        for (int i = 0; i < 10; i++)
+        {
+            ba.add(i);
+        }
+        System.out.println(ba.getSize());
+        System.out.println(ba);
+        //System.out.println(ba.count(7)); // Should print 2
     }
     public BetterArray(){
         //Make default length 10
@@ -20,9 +23,11 @@ public class BetterArray{
     public void add(int a){
         if (size == arr.length){
             int[] tmp = arr;
-            System.out.println("Resizing to size " + arr.length);
+            System.out.println("Resizing to size " + arr.length*2);
             arr = new int[arr.length*2];
-
+            for(int i = 0; i < tmp.length; i++){
+                arr[i] = tmp[i];
+            }
         }
         arr[size] = a;
         size+=1;
