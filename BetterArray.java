@@ -6,6 +6,7 @@ public class BetterArray{
         test.add(1);
         test.add(4);
         test.add(9);
+        System.out.print(test);
         System.out.println("Length: " + test.getSize());
         System.out.println("Should be 9 "  + test.get(2));
         test.clear();
@@ -36,8 +37,38 @@ public class BetterArray{
         if(index <= size && index >= 0){
             return arr[index];
         }
-        System.out.println("There is no value at the given index");
+        System.err.println("Invalid Index");
         return 0;
+    }
+    public void set(int index, int num){
+    //set sepecific values whithn the array
+        if (index <= size && index >= 0){
+            System.err.print("ERROR: Index invalid");
+        }
+        else{
+            arr[index] = num;
+        }
+    }
+    //METHODS THAT ARE YET TO BE DONE
+    /*
+    public void remove(int index){
+    //removes a value AND shrink arry size aka NO INTERNAL BLANKS
+    }
+    public Boolean contains(int num){
+        //returns boolean of weher or not it is contained
+    }
+    //Xtra Methods?
+    public int avg(){
+        //returns average
+    }
+    */
+    public String toString(){
+        String ans = "[";
+        for(int i = 0; i < size; i++){
+            ans += (arr[i] + " " );
+        }
+        ans +=  ("]");
+        return ans;
     }
 
 }
