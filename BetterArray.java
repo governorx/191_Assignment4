@@ -14,7 +14,11 @@ public class BetterArray{
         }
         System.out.println(ba.getSize());
         System.out.println(ba);
-        //System.out.println(ba.count(7)); // Should print 2
+        System.out.println(ba.count(7)); // Should print 2
+        ba.remove(0);
+        System.out.println(ba);
+        System.out.println(ba.indexOf(4)); //should return like 4 or 3 or somtnin
+        System.out.println("\nContains 111: " + ba.contains(111) + " \ncontains 4: " + ba.contains(4));
     }
     public BetterArray(){
         //Make default length 10
@@ -55,25 +59,44 @@ public class BetterArray{
             arr[index] = num;
         }
     }
-    //METHODS THAT ARE YET TO BE DONE
-    /*
     public void remove(int index){
         //removes a value AND shrink arry size aka NO INTERNAL BLANKS
+        arr[index] = 0;
+        for(int i  = index; i < size; i ++){
+            arr[i] = arr[i+1];
+        }
+        size--;
     }
     public Boolean contains(int num){
         //returns boolean of weher or not it is contained
+        for(int i = 0; i < size; i++){
+            if(num == arr[i]){
+            return true;
+            }
+        }
+         return false;
     }
-    //Xtra Methods?
     public int count(int num){
         //returns the number of times a specified element occurs
+        int sum = 0;
+        for(int i = 0; i < size; i++){
+            if(num == arr[i]){
+            sum++;
+            }
+        }
+         return sum;
+
     }
     public int indexOf(int num){
-        //returns index of first ccurency of this value
+        //returns index of first occurence of this value
+        for(int i = 0; i < size; i++){
+            if( arr[i] == num){
+                return i;
+            }
+        }
+        return -1;
+
     }
-    public int average(){
-        //returns average
-    }
-    */
     public String toString(){
         String ans = "[";
         for(int i = 0; i < size; i++){
