@@ -1,3 +1,10 @@
+/*
+ *Names: Ernest X. Horton, Coleman Scott
+ *File: BetterArray.java
+ *Description: A class which provides helpful methods for using
+ *             arrays beyond what Java provides by default.
+ *Collaborators: N/A
+*/
 public class BetterArray{
     private int[] arr;
     private int size = 0;
